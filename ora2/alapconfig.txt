@@ -1,0 +1,30 @@
+enable
+configure terminal
+hostname R1
+line con 0
+password 1234
+login local
+end
+
+configure terminal
+
+enable secret 1234
+exit
+
+configure terminal
+
+line vty 0 15
+password 1234
+login local
+end
+configure terminal
+
+service password-enc
+end
+
+configure terminal
+
+banner motd 'Belepes idegeneknek tilos'
+end
+
+copy run start
