@@ -7,24 +7,25 @@ login local
 end
 
 configure terminal
-
 enable secret 1234
 exit
 
 configure terminal
-
 line vty 0 15
 password 1234
 login local
 end
-configure terminal
 
-service password-enc
+configure terminal
+service password-encryption
 end
 
 configure terminal
-
 banner motd 'Belepes idegeneknek tilos'
+end
+
+configure terminal
+username admin privilege 15 secret 1234
 end
 
 copy run start
