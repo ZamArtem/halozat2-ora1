@@ -1,1 +1,16 @@
+ip nat inside source static 192.168.1.1 200.200.200.1
+int fa0
+ip address 10.10.10.1
+ip nat inside
 
+int fa1
+ip address 200.200.200.1
+ip nat outside
+------------------------------------------------------------
+ip nat pool [NEV] 200.200.200.1 200.200.200.15 netmask 255.255.255.240
+access list 1 permit 192.168.0.0 0.0.255.255
+ip nat inside source list 1 pool [NEV]
+int fa0
+ip nat inside
+int fa1
+ip nat outside
