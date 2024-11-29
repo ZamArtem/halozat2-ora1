@@ -6,6 +6,8 @@ configure terminal
 username admin privilege 15 secret 1234
 enable password 1234
 end
+
+configure terminal
 ip domain-name winserver.winserver.lan
 cry key gen rsa
 1024
@@ -17,7 +19,7 @@ end
 
 configure terminal
 enable secret 1234
-exit
+end
 
 configure terminal
 line vty 0 15
@@ -25,6 +27,8 @@ password 1234
 trans input ssh
 login local
 end
+
+configure terminal
 ip ftp username 1234
 ip ftp password 1234
 
@@ -33,7 +37,7 @@ ip address 192.168.0.2 255.255.255.0
 no sh
 ip default-gate 192.168.0.1
 end
-copy r st
+
 configure terminal
 service password-encryption
 end
@@ -43,4 +47,4 @@ banner motd 'Belepes idegeneknek tilos'
 end
 
 
-copy run start
+copy r st
