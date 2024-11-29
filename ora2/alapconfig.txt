@@ -3,7 +3,7 @@ configure terminal
 hostname sw1
 
 configure terminal
-username admin privilege 15 secret 1234
+username 1234 privilege 15 secret 1234
 enable password 1234
 end
 
