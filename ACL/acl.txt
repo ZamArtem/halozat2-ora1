@@ -1,0 +1,11 @@
+
+access-list 1 permit 172.30.0.0 0.0.255.255
+
+int fa 0/0
+ip access-group 1 outbound
+
+ip access-list standard NAME
+
+permit 10.1.5.1
+deny 192.168.1.53
+permit 172.30.0.0 0.0.255.255
